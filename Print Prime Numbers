@@ -1,0 +1,23 @@
+Problem:
+
+Write a query to print all prime numbers less than or equal to 1000. Print your result on a single line, and use the ampersand (&) character as your separator (instead of a space).
+For example, the output for all prime numbers <=10 would be:
+2&3&5&7
+
+Solution:
+
+DECLARE @prime INT = 2
+DECLARE @num INT
+DECLARE @counter INT
+WHILE (@prime <= 1000)
+BEGIN
+    SET @num = 1
+    SET @counter = 0
+    WHILE (@num < @prime)
+    BEGIN
+        IF (@prime % @num = 0)
+        SET @counter = @counter +1
+    END
+    IF (@counter <= 2)
+    PRINT CONCAT(@prime, '&')
+END
