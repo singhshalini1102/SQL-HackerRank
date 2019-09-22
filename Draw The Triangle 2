@@ -1,0 +1,18 @@
+Problem:
+
+P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+Write a query to print the pattern P(20).
+
+Solution:
+
+DECLARE @star INT = 1
+WHILE (@star <= 20)
+BEGIN
+    PRINT REPLICATE('* ', @star)
+    SET @star= @star+1
+END
